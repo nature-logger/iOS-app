@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C74EB428252A2DD600CAC644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB427252A2DD600CAC644 /* AppDelegate.swift */; };
+		C74EB42A252A2DD600CAC644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB429252A2DD600CAC644 /* SceneDelegate.swift */; };
+		C74EB42C252A2DD600CAC644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB42B252A2DD600CAC644 /* ViewController.swift */; };
+		C74EB42F252A2DD600CAC644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74EB42D252A2DD600CAC644 /* Main.storyboard */; };
+		C74EB431252A2DD700CAC644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74EB430252A2DD700CAC644 /* Assets.xcassets */; };
+		C74EB434252A2DD700CAC644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */; };
+		C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */; };
+		C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C74EB43B252A2DD700CAC644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C74EB41C252A2DD600CAC644 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C74EB423252A2DD600CAC644;
+			remoteInfo = "nature-logger";
+		};
+		C74EB446252A2DD700CAC644 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C74EB41C252A2DD600CAC644 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C74EB423252A2DD600CAC644;
+			remoteInfo = "nature-logger";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74EB427252A2DD600CAC644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C74EB429252A2DD600CAC644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C74EB42B252A2DD600CAC644 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C74EB42E252A2DD600CAC644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C74EB430252A2DD700CAC644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C74EB433252A2DD700CAC644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerTests.swift; sourceTree = "<group>"; };
+		C74EB440252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerUITests.swift; sourceTree = "<group>"; };
+		C74EB44B252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C74EB421252A2DD600CAC644 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB437252A2DD700CAC644 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB442252A2DD700CAC644 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C74EB41B252A2DD600CAC644 = {
+			isa = PBXGroup;
+			children = (
+				C74EB426252A2DD600CAC644 /* nature-logger */,
+				C74EB43D252A2DD700CAC644 /* nature-loggerTests */,
+				C74EB448252A2DD700CAC644 /* nature-loggerUITests */,
+				C74EB425252A2DD600CAC644 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C74EB425252A2DD600CAC644 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C74EB424252A2DD600CAC644 /* nature-logger.app */,
+				C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */,
+				C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C74EB426252A2DD600CAC644 /* nature-logger */ = {
+			isa = PBXGroup;
+			children = (
+				C74EB427252A2DD600CAC644 /* AppDelegate.swift */,
+				C74EB429252A2DD600CAC644 /* SceneDelegate.swift */,
+				C74EB42B252A2DD600CAC644 /* ViewController.swift */,
+				C74EB42D252A2DD600CAC644 /* Main.storyboard */,
+				C74EB430252A2DD700CAC644 /* Assets.xcassets */,
+				C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */,
+				C74EB435252A2DD700CAC644 /* Info.plist */,
+			);
+			path = "nature-logger";
+			sourceTree = "<group>";
+		};
+		C74EB43D252A2DD700CAC644 /* nature-loggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */,
+				C74EB440252A2DD700CAC644 /* Info.plist */,
+			);
+			path = "nature-loggerTests";
+			sourceTree = "<group>";
+		};
+		C74EB448252A2DD700CAC644 /* nature-loggerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */,
+				C74EB44B252A2DD700CAC644 /* Info.plist */,
+			);
+			path = "nature-loggerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C74EB423252A2DD600CAC644 /* nature-logger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C74EB44E252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-logger" */;
+			buildPhases = (
+				C74EB420252A2DD600CAC644 /* Sources */,
+				C74EB421252A2DD600CAC644 /* Frameworks */,
+				C74EB422252A2DD600CAC644 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "nature-logger";
+			productName = "nature-logger";
+			productReference = C74EB424252A2DD600CAC644 /* nature-logger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C74EB439252A2DD700CAC644 /* nature-loggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C74EB451252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-loggerTests" */;
+			buildPhases = (
+				C74EB436252A2DD700CAC644 /* Sources */,
+				C74EB437252A2DD700CAC644 /* Frameworks */,
+				C74EB438252A2DD700CAC644 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C74EB43C252A2DD700CAC644 /* PBXTargetDependency */,
+			);
+			name = "nature-loggerTests";
+			productName = "nature-loggerTests";
+			productReference = C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C74EB444252A2DD700CAC644 /* nature-loggerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C74EB454252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-loggerUITests" */;
+			buildPhases = (
+				C74EB441252A2DD700CAC644 /* Sources */,
+				C74EB442252A2DD700CAC644 /* Frameworks */,
+				C74EB443252A2DD700CAC644 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C74EB447252A2DD700CAC644 /* PBXTargetDependency */,
+			);
+			name = "nature-loggerUITests";
+			productName = "nature-loggerUITests";
+			productReference = C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C74EB41C252A2DD600CAC644 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Syddansk Universitet";
+				TargetAttributes = {
+					C74EB423252A2DD600CAC644 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					C74EB439252A2DD700CAC644 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = C74EB423252A2DD600CAC644;
+					};
+					C74EB444252A2DD700CAC644 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = C74EB423252A2DD600CAC644;
+					};
+				};
+			};
+			buildConfigurationList = C74EB41F252A2DD600CAC644 /* Build configuration list for PBXProject "nature-logger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C74EB41B252A2DD600CAC644;
+			productRefGroup = C74EB425252A2DD600CAC644 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C74EB423252A2DD600CAC644 /* nature-logger */,
+				C74EB439252A2DD700CAC644 /* nature-loggerTests */,
+				C74EB444252A2DD700CAC644 /* nature-loggerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C74EB422252A2DD600CAC644 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74EB434252A2DD700CAC644 /* LaunchScreen.storyboard in Resources */,
+				C74EB431252A2DD700CAC644 /* Assets.xcassets in Resources */,
+				C74EB42F252A2DD600CAC644 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB438252A2DD700CAC644 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB443252A2DD700CAC644 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C74EB420252A2DD600CAC644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74EB42C252A2DD600CAC644 /* ViewController.swift in Sources */,
+				C74EB428252A2DD600CAC644 /* AppDelegate.swift in Sources */,
+				C74EB42A252A2DD600CAC644 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB436252A2DD700CAC644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C74EB441252A2DD700CAC644 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C74EB43C252A2DD700CAC644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C74EB423252A2DD600CAC644 /* nature-logger */;
+			targetProxy = C74EB43B252A2DD700CAC644 /* PBXContainerItemProxy */;
+		};
+		C74EB447252A2DD700CAC644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C74EB423252A2DD600CAC644 /* nature-logger */;
+			targetProxy = C74EB446252A2DD700CAC644 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C74EB42D252A2DD600CAC644 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C74EB42E252A2DD600CAC644 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C74EB433252A2DD700CAC644 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C74EB44C252A2DD700CAC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C74EB44D252A2DD700CAC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C74EB44F252A2DD700CAC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-logger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-logger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C74EB450252A2DD700CAC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-logger/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-logger";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C74EB452252A2DD700CAC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-loggerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-loggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nature-logger.app/nature-logger";
+			};
+			name = Debug;
+		};
+		C74EB453252A2DD700CAC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-loggerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-loggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nature-logger.app/nature-logger";
+			};
+			name = Release;
+		};
+		C74EB455252A2DD700CAC644 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-loggerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-loggerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "nature-logger";
+			};
+			name = Debug;
+		};
+		C74EB456252A2DD700CAC644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "nature-loggerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SDU.nature-loggerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "nature-logger";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C74EB41F252A2DD600CAC644 /* Build configuration list for PBXProject "nature-logger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C74EB44C252A2DD700CAC644 /* Debug */,
+				C74EB44D252A2DD700CAC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C74EB44E252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-logger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C74EB44F252A2DD700CAC644 /* Debug */,
+				C74EB450252A2DD700CAC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C74EB451252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-loggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C74EB452252A2DD700CAC644 /* Debug */,
+				C74EB453252A2DD700CAC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C74EB454252A2DD700CAC644 /* Build configuration list for PBXNativeTarget "nature-loggerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C74EB455252A2DD700CAC644 /* Debug */,
+				C74EB456252A2DD700CAC644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C74EB41C252A2DD600CAC644 /* Project object */;
+}
