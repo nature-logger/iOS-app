@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:nature-logger.xcodeproj">
+      location = "group:/Users/donat/Documents/ios_projects/iOS-app/nature-logger/Views">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

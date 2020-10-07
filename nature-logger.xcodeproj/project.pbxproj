@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C74EB428252A2DD600CAC644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB427252A2DD600CAC644 /* AppDelegate.swift */; };
-		C74EB42A252A2DD600CAC644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB429252A2DD600CAC644 /* SceneDelegate.swift */; };
-		C74EB42C252A2DD600CAC644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB42B252A2DD600CAC644 /* ViewController.swift */; };
-		C74EB42F252A2DD600CAC644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74EB42D252A2DD600CAC644 /* Main.storyboard */; };
-		C74EB431252A2DD700CAC644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74EB430252A2DD700CAC644 /* Assets.xcassets */; };
-		C74EB434252A2DD700CAC644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */; };
 		C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */; };
 		C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */; };
+		C7A5CF5B252DDA7E00BCE8B3 /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = C7A5CF58252DDA7E00BCE8B3 /* Controllers */; };
+		C7A5CF5D252DDA7E00BCE8B3 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = C7A5CF5A252DDA7E00BCE8B3 /* Models */; };
+		C7A5CF5F252DDB4900BCE8B3 /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = C7A5CF5E252DDB4900BCE8B3 /* Supporting Files */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +33,6 @@
 
 /* Begin PBXFileReference section */
 		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C74EB427252A2DD600CAC644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C74EB429252A2DD600CAC644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C74EB42B252A2DD600CAC644 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C74EB42E252A2DD600CAC644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C74EB430252A2DD700CAC644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C74EB433252A2DD700CAC644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerTests.swift; sourceTree = "<group>"; };
@@ -49,6 +40,10 @@
 		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerUITests.swift; sourceTree = "<group>"; };
 		C74EB44B252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A5CF58252DDA7E00BCE8B3 /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
+		C7A5CF5A252DDA7E00BCE8B3 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		C7A5CF5E252DDB4900BCE8B3 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Supporting Files"; sourceTree = "<group>"; };
+		C7A5CF60252DDCCE00BCE8B3 /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Views; path = "/Users/donat/Documents/ios_projects/iOS-app/nature-logger/Views"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +94,10 @@
 		C74EB426252A2DD600CAC644 /* nature-logger */ = {
 			isa = PBXGroup;
 			children = (
-				C74EB427252A2DD600CAC644 /* AppDelegate.swift */,
-				C74EB429252A2DD600CAC644 /* SceneDelegate.swift */,
-				C74EB42B252A2DD600CAC644 /* ViewController.swift */,
-				C74EB42D252A2DD600CAC644 /* Main.storyboard */,
-				C74EB430252A2DD700CAC644 /* Assets.xcassets */,
-				C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */,
+				C7A5CF60252DDCCE00BCE8B3 /* Views */,
+				C7A5CF58252DDA7E00BCE8B3 /* Controllers */,
+				C7A5CF5A252DDA7E00BCE8B3 /* Models */,
+				C7A5CF5E252DDB4900BCE8B3 /* Supporting Files */,
 				C74EB435252A2DD700CAC644 /* Info.plist */,
 			);
 			path = "nature-logger";
@@ -232,9 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74EB434252A2DD700CAC644 /* LaunchScreen.storyboard in Resources */,
-				C74EB431252A2DD700CAC644 /* Assets.xcassets in Resources */,
-				C74EB42F252A2DD600CAC644 /* Main.storyboard in Resources */,
+				C7A5CF5F252DDB4900BCE8B3 /* Supporting Files in Resources */,
+				C7A5CF5D252DDA7E00BCE8B3 /* Models in Resources */,
+				C7A5CF5B252DDA7E00BCE8B3 /* Controllers in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74EB42C252A2DD600CAC644 /* ViewController.swift in Sources */,
-				C74EB428252A2DD600CAC644 /* AppDelegate.swift in Sources */,
-				C74EB42A252A2DD600CAC644 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +285,6 @@
 			targetProxy = C74EB446252A2DD700CAC644 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C74EB42D252A2DD600CAC644 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C74EB42E252A2DD600CAC644 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C74EB432252A2DD700CAC644 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C74EB433252A2DD700CAC644 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C74EB44C252A2DD700CAC644 /* Debug */ = {
@@ -467,7 +438,6 @@
 		C74EB452252A2DD700CAC644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "nature-loggerTests/Info.plist";
@@ -488,7 +458,6 @@
 		C74EB453252A2DD700CAC644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "nature-loggerTests/Info.plist";
@@ -509,7 +478,6 @@
 		C74EB455252A2DD700CAC644 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "nature-loggerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,7 +496,6 @@
 		C74EB456252A2DD700CAC644 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "nature-loggerUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
