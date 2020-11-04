@@ -9,10 +9,23 @@
 import Foundation
 import CoreLocation
 
+struct Location: Codable {
+    var longitude: Double
+    var latitude: Double
+    init(location: CLLocationCoordinate2D){
+        longitude = location.longitude
+        latitude = location.latitude
+    }
+    init(longitude: Double, latitude: Double){
+        self.longitude = longitude
+        self.latitude = latitude
+    }
+}	
+
 class Entry:Codable {
     var timestamp: Date
-    //var coordinate: CLLocationCoordinate2D?
     var title: String
+    var location: Location?
     var description: String?
     var imagePath: URL?
     var owner: String? //For future online features maybe.
