@@ -36,7 +36,7 @@ class PointOfInterest: Codable {
         self.created = Date()
         self.title = title
     }
-    
+    	
     public func setTitle(title: String){
         self.title = title
     }
