@@ -20,7 +20,7 @@ struct Location: Codable {
         self.longitude = longitude
         self.latitude = latitude
     }
-}	
+}
 
 class Entry:Codable {
     var timestamp: Date
