@@ -9,29 +9,31 @@
 import Foundation
 import CoreLocation
 
-struct Location: Codable {
-    var longitude: Double
-    var latitude: Double
-    init(location: CLLocationCoordinate2D){
-        longitude = location.longitude
-        latitude = location.latitude
-    }
-    init(longitude: Double, latitude: Double){
-        self.longitude = longitude
-        self.latitude = latitude
-    }
-}
-
-class Entry:Codable {
-    var timestamp: Date
+class Entry: Codable {
+    let created: Date
     var title: String
-    var location: Location?
-    var description: String?
-    var imagePath: URL?
-    var owner: String? //For future online features maybe.
+    private var longitude: Double?
+    private var latitude: Double?
+    var location: CLLocationCoordinate2D? {
+        get {
+            if let longitude = self.longitude, let latitude = self.latitude {
+                return CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
+            }
+            return nil
+        }
+        set {
+            if let location = newValue {
+                longitude = location.longitude
+                latitude = location.latitude
+            }
+        }
+    }
+    private(set) var description: String?
+    private(set) var imagePath: URL?
+    private(set) var owner: String? //For future online features maybe.
     
     init(title: String) {
-        self.timestamp = Date()
+        self.created = Date()
         self.title = title
     }
 }
