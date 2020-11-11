@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class PointOfInterest: Codable {
+struct PointOfInterest: Codable {
     let created: Date
     private var longitude: Double?
     private var latitude: Double?
@@ -37,19 +37,19 @@ class PointOfInterest: Codable {
         self.title = title
     }
     	
-    public func setTitle(title: String){
+    public mutating func setTitle(title: String){
         self.title = title
     }
     
-    public func setImagePath(url: URL){
+    public mutating func setImagePath(url: URL){
         imagePath = url
     }
     
-    public func setOwner(owner: String){
+    public mutating func setOwner(owner: String){
         self.owner = owner
     }
     
-    public func setDescription(description: String){
+    public mutating func setDescription(description: String){
         self.description = description
     }
 }
