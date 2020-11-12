@@ -15,6 +15,7 @@
 		9E9EF1292542138500A1C1B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1252542138500A1C1B4 /* LaunchScreen.storyboard */; };
 		9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1272542138500A1C1B4 /* Main.storyboard */; };
 		9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA04D65255C4DDE00F398AB /* CameraViewController.swift */; };
+		C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		9E9EF1262542138500A1C1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E9EF1282542138500A1C1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EA04D65255C4DDE00F398AB /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
 		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 			children = (
 				9E9EF10F2542135200A1C1B4 /* ViewController.swift */,
 				9EA04D65255C4DDE00F398AB /* CameraViewController.swift */,
+				C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
 				9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */,
+				C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */,
 				9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

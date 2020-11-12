@@ -18,17 +18,27 @@ class CameraViewController: UIViewController {
     var session: AVCaptureSession?
     
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var captureImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Snap new Point of Interest"
+        
+        var items = toolBar.items
+        
+        let item = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: nil)
+        items?.append(item)
+        toolBar.setItems(items, animated: false)
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        videoPreviewLayer!.frame = previewView.bounds
+        if videoPreviewLayer != nil {
+            videoPreviewLayer!.frame = previewView.bounds
+        }
     }
     
     @IBAction func takePhoto(_ sender: UIButton) {
