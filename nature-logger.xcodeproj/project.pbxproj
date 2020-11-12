@@ -15,8 +15,6 @@
 		9E9EF1292542138500A1C1B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1252542138500A1C1B4 /* LaunchScreen.storyboard */; };
 		9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1272542138500A1C1B4 /* Main.storyboard */; };
 		9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA04D65255C4DDE00F398AB /* CameraViewController.swift */; };
-		C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */; };
-		C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +46,7 @@
 		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerTests.swift; sourceTree = "<group>"; };
-		C74EB440252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerUITests.swift; sourceTree = "<group>"; };
-		C74EB44B252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9E92F8152553130100698DA6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		9E9EF10E2542133E00A1C1B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				C74EB426252A2DD600CAC644 /* nature-logger */,
-				C74EB43D252A2DD700CAC644 /* nature-loggerTests */,
-				C74EB448252A2DD700CAC644 /* nature-loggerUITests */,
 				C74EB425252A2DD600CAC644 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,7 +131,6 @@
 		C74EB426252A2DD600CAC644 /* nature-logger */ = {
 			isa = PBXGroup;
 			children = (
-				9E92F8152553130100698DA6 /* Resources */,
 				9E9EF12E2542141600A1C1B4 /* Models */,
 				9E9EF1242542138500A1C1B4 /* Views */,
 				9E9EF1172542136400A1C1B4 /* Supporting files */,
@@ -154,24 +138,6 @@
 				C74EB435252A2DD700CAC644 /* Info.plist */,
 			);
 			path = "nature-logger";
-			sourceTree = "<group>";
-		};
-		C74EB43D252A2DD700CAC644 /* nature-loggerTests */ = {
-			isa = PBXGroup;
-			children = (
-				C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */,
-				C74EB440252A2DD700CAC644 /* Info.plist */,
-			);
-			path = "nature-loggerTests";
-			sourceTree = "<group>";
-		};
-		C74EB448252A2DD700CAC644 /* nature-loggerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */,
-				C74EB44B252A2DD700CAC644 /* Info.plist */,
-			);
-			path = "nature-loggerUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,7 +283,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
