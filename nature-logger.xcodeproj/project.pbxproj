@@ -15,6 +15,15 @@
 		9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1272542138500A1C1B4 /* Main.storyboard */; };
 		C74EB43F252A2DD700CAC644 /* nature_loggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB43E252A2DD700CAC644 /* nature_loggerTests.swift */; };
 		C74EB44A252A2DD700CAC644 /* nature_loggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */; };
+		D418C0372565832300605062 /* Plants.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418C0352565832300605062 /* Plants.storyboard */; };
+		D418C0392565864600605062 /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C0382565864500605062 /* PlantsViewController.swift */; };
+		D418C03D2565871100605062 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C03C2565871100605062 /* File.swift */; };
+		D418C03F2565874400605062 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C03E2565874400605062 /* Plants.swift */; };
+		D418C0422565879C00605062 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C0412565879C00605062 /* CustomTableViewCell.swift */; };
+		D418C044256587D300605062 /* PlantsDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C043256587D300605062 /* PlantsDetailedViewController.swift */; };
+		D418C046256587EF00605062 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D418C045256587EE00605062 /* LoadingCell.xib */; };
+		D418C0482565885D00605062 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C0472565885D00605062 /* LoadingCell.swift */; };
+		D418C04B2565889B00605062 /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418C04A2565889B00605062 /* ImageDownload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB449252A2DD700CAC644 /* nature_loggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nature_loggerUITests.swift; sourceTree = "<group>"; };
 		C74EB44B252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D418C0362565832300605062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Plants.storyboard; sourceTree = "<group>"; };
+		D418C0382565864500605062 /* PlantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlantsViewController.swift; path = ../../../../TableViewTest/TableViewTest/PlantsViewController.swift; sourceTree = "<group>"; };
+		D418C03C2565871100605062 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D418C03E2565874400605062 /* Plants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plants.swift; path = ../../../../TableViewTest/TableViewTest/Plants.swift; sourceTree = "<group>"; };
+		D418C0412565879C00605062 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = ../../../../TableViewTest/TableViewTest/CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D418C043256587D300605062 /* PlantsDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlantsDetailedViewController.swift; path = ../../../../TableViewTest/TableViewTest/PlantsDetailedViewController.swift; sourceTree = "<group>"; };
+		D418C045256587EE00605062 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCell.xib; path = ../../../../TableViewTest/TableViewTest/LoadingCell.xib; sourceTree = "<group>"; };
+		D418C0472565885D00605062 /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCell.swift; path = ../../../../TableViewTest/TableViewTest/LoadingCell.swift; sourceTree = "<group>"; };
+		D418C04A2565889B00605062 /* ImageDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageDownload.swift; path = ../../../../TableViewTest/TableViewTest/ImageDownload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,8 @@
 		9E9EF10E2542133E00A1C1B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D418C0382565864500605062 /* PlantsViewController.swift */,
+				D418C043256587D300605062 /* PlantsDetailedViewController.swift */,
 				9E9EF10F2542135200A1C1B4 /* ViewController.swift */,
 			);
 			path = Controllers;
@@ -97,6 +117,8 @@
 		9E9EF1242542138500A1C1B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D418C045256587EE00605062 /* LoadingCell.xib */,
+				D418C0352565832300605062 /* Plants.storyboard */,
 				9E9EF1252542138500A1C1B4 /* LaunchScreen.storyboard */,
 				9E9EF1272542138500A1C1B4 /* Main.storyboard */,
 			);
@@ -106,6 +128,8 @@
 		9E9EF12E2542141600A1C1B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D418C03E2565874400605062 /* Plants.swift */,
+				D418C03C2565871100605062 /* File.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +157,8 @@
 		C74EB426252A2DD600CAC644 /* nature-logger */ = {
 			isa = PBXGroup;
 			children = (
+				D418C0492565888C00605062 /* Utils */,
+				D418C0402565879000605062 /* Cells */,
 				9E9EF12E2542141600A1C1B4 /* Models */,
 				9E9EF1242542138500A1C1B4 /* Views */,
 				9E9EF1172542136400A1C1B4 /* Supporting files */,
@@ -158,6 +184,23 @@
 				C74EB44B252A2DD700CAC644 /* Info.plist */,
 			);
 			path = "nature-loggerUITests";
+			sourceTree = "<group>";
+		};
+		D418C0402565879000605062 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D418C0412565879C00605062 /* CustomTableViewCell.swift */,
+				D418C0472565885D00605062 /* LoadingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D418C0492565888C00605062 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D418C04A2565889B00605062 /* ImageDownload.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +309,8 @@
 			files = (
 				9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */,
 				9E9EF11D2542137100A1C1B4 /* Assets.xcassets in Resources */,
+				D418C0372565832300605062 /* Plants.storyboard in Resources */,
+				D418C046256587EF00605062 /* LoadingCell.xib in Resources */,
 				9E9EF1292542138500A1C1B4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,9 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D418C03D2565871100605062 /* File.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
+				D418C044256587D300605062 /* PlantsDetailedViewController.swift in Sources */,
 				9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */,
+				D418C0422565879C00605062 /* CustomTableViewCell.swift in Sources */,
+				D418C04B2565889B00605062 /* ImageDownload.swift in Sources */,
+				D418C0392565864600605062 /* PlantsViewController.swift in Sources */,
+				D418C0482565885D00605062 /* LoadingCell.swift in Sources */,
 				9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */,
+				D418C03F2565874400605062 /* Plants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +395,14 @@
 				9E9EF1282542138500A1C1B4 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D418C0352565832300605062 /* Plants.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D418C0362565832300605062 /* Base */,
+			);
+			name = Plants.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
