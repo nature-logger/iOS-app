@@ -26,9 +26,14 @@ class CameraViewController: UIViewController {
         title = "Snap new Point of Interest"
         
         var items = toolBar.items
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: nil)
+        let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: nil)
         
-        let item = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: nil)
-        items?.append(item)
+        items?.append(spacer)
+        items?.append(cameraButton)
+        items?.append(spacer)
+        items?.append(plusButton)
         toolBar.setItems(items, animated: false)
         
         // Do any additional setup after loading the view.
@@ -44,6 +49,22 @@ class CameraViewController: UIViewController {
     @IBAction func takePhoto(_ sender: UIButton) {
     }
     
+    func setupLivePreview() {
+        if let currentSession = session, var preview = videoPreviewLayer {
+            preview = AVCaptureVideoPreviewLayer(session: currentSession)
+            preview.videoGravity = .resizeAspect
+            preview.connection?.videoOrientation = .portrait
+            previewView.layer.addSublayer(preview)
+            
+            DispatchQueue.global(qos: .userInitiated).async {
+                currentSession.startRunning()
+                DispatchQueue.main.async {
+                    preview.frame = self.previewView.bounds
+                }
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         session = AVCaptureSession()
@@ -57,31 +78,13 @@ class CameraViewController: UIViewController {
                 print(error.localizedDescription)
             }
             
-            if let currentInput = input, currentSession.canAddInput(input!) {
-                currentSession.addInput(currentInput)
-                stillImageOutput = AVCapturePhotoOutput()
-                stillImageOutput?.setValue(AVVideoCodecType.jpeg, forKey: AVVideoCodecKey)
-                
-                if stillImageOutput != nil && currentSession.canAddOutput(stillImageOutput!){
-                    videoPreviewLayer = AVCaptureVideoPreviewLayer(session: currentSession)
-                    videoPreviewLayer!.videoGravity = AVLayerVideoGravity.resizeAspect
-                    videoPreviewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-                    previewView.layer.addSublayer(videoPreviewLayer!)
-                    currentSession.startRunning()
-                }
-                
+            stillImageOutput = AVCapturePhotoOutput()
+            
+            if input != nil && stillImageOutput != nil && currentSession.canAddInput(input!) && currentSession.canAddOutput(stillImageOutput!) { //maybe refactor this.
+                currentSession.addInput(input!)
+                currentSession.addOutput(stillImageOutput!)
+                setupLivePreview()
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
