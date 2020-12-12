@@ -9,13 +9,11 @@
 import UIKit
 import AVFoundation
 
-class CameraViewController: UIViewController {
+class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
-    var captureSession: AVCaptureSession?
-    var stillImageOutput: AVCapturePhotoOutput?
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer?
-    
-    var session: AVCaptureSession?
+    var captureSession: AVCaptureSession!
+    var stillImageOutput: AVCapturePhotoOutput!
+    var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var toolBar: UIToolbar!
@@ -27,7 +25,7 @@ class CameraViewController: UIViewController {
         
         var items = toolBar.items
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: nil)
+        let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(takePhoto))
         let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: nil)
         
         items?.append(spacer)
@@ -35,56 +33,67 @@ class CameraViewController: UIViewController {
         items?.append(spacer)
         items?.append(plusButton)
         toolBar.setItems(items, animated: false)
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if videoPreviewLayer != nil {
-            videoPreviewLayer!.frame = previewView.bounds
+        captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .medium
+        
+        guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
+        else {
+            print("Unable to access back camera!")
+            return
         }
-    }
-    
-    @IBAction func takePhoto(_ sender: UIButton) {
-    }
-    
-    func setupLivePreview() {
-        if let currentSession = session, var preview = videoPreviewLayer {
-            preview = AVCaptureVideoPreviewLayer(session: currentSession)
-            preview.videoGravity = .resizeAspect
-            preview.connection?.videoOrientation = .portrait
-            previewView.layer.addSublayer(preview)
-            
-            DispatchQueue.global(qos: .userInitiated).async {
-                currentSession.startRunning()
-                DispatchQueue.main.async {
-                    preview.frame = self.previewView.bounds
-                }
+        
+        do {
+            let input = try AVCaptureDeviceInput(device: backCamera)
+            stillImageOutput = AVCapturePhotoOutput()
+            if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
+                captureSession.addInput(input)
+                captureSession.addOutput(stillImageOutput)
+                setupLivePreview()
             }
+        }
+        catch _ {
+            print("Unable to initialize backcamera")
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        session = AVCaptureSession()
-        if let currentSession = session, let backCamera = AVCaptureDevice.default(for: AVMediaType.video){
-            currentSession.sessionPreset = AVCaptureSession.Preset.photo
-            var input: AVCaptureDeviceInput?
-            
-            do { input = try AVCaptureDeviceInput(device: backCamera)}
-            catch let error as NSError {
-                // TODO: popup / segue to other view (create entry)
-                print(error.localizedDescription)
-            }
-            
-            stillImageOutput = AVCapturePhotoOutput()
-            
-            if input != nil && stillImageOutput != nil && currentSession.canAddInput(input!) && currentSession.canAddOutput(stillImageOutput!) { //maybe refactor this.
-                currentSession.addInput(input!)
-                currentSession.addOutput(stillImageOutput!)
-                setupLivePreview()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.captureSession.stopRunning()
+    }
+    
+    func setupLivePreview() {
+        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.connection?.videoOrientation = .portrait
+        previewView.layer.addSublayer(videoPreviewLayer)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession.startRunning()
+            DispatchQueue.main.async {
+                self.videoPreviewLayer.frame = self.previewView.bounds
             }
         }
+    }
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation()
+        else {
+            return
+        }
+        let image = UIImage(data: imageData)
+        captureImageView.image = image
+    }
+    
+    @objc func takePhoto() {
+        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
+        stillImageOutput.capturePhoto(with: settings, delegate: self)
     }
 }
