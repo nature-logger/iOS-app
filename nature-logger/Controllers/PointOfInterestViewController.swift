@@ -9,11 +9,32 @@
 import UIKit
 
 class PointOfInterestViewController: UIViewController {
-
+    
+    private var imageValue: UIImage?
+    var image: UIImage? {
+        get {
+            capturedImage.image
+        }
+        set {
+            if let imageView = capturedImage {
+                imageView.image = newValue
+            } else {
+                imageValue = newValue
+            }
+        }
+    }
+    
+    @IBOutlet weak var capturedImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        capturedImage.image = imageValue
     }
     
 

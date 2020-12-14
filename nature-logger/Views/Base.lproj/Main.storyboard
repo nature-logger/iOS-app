@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1Z-Aa-OIl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1Z-Aa-OIl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,6 +59,7 @@
                         <outlet property="captureImageView" destination="rnb-LJ-brB" id="3Jh-xC-Bep"/>
                         <outlet property="previewView" destination="o8H-Ap-hs8" id="gaX-gQ-6KN"/>
                         <outlet property="toolBar" destination="R0E-V5-h0q" id="9MM-LZ-BMn"/>
+                        <segue destination="Pfx-c6-5ya" kind="show" identifier="addPOI" id="hx2-ca-50a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOx-29-bMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -74,9 +75,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sdH-fx-6e5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="310.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="552"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="sdH-fx-6e5" secondAttribute="height" multiplier="4:3" id="qAq-lK-QrJ"/>
+                                    <constraint firstAttribute="width" secondItem="sdH-fx-6e5" secondAttribute="height" multiplier="3:4" id="qAq-lK-QrJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -89,6 +90,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vog-vA-Zzd"/>
+                    <connections>
+                        <outlet property="capturedImage" destination="sdH-fx-6e5" id="VEp-0l-GDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr1-T8-FSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

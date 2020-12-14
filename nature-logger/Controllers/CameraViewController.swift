@@ -26,7 +26,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         var items = toolBar.items
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(takePhoto))
-        let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: nil)
+        let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: #selector(addPOIWithPhoto))
         
         items?.append(spacer)
         items?.append(cameraButton)
@@ -70,6 +70,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.captureSession.stopRunning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addPOI" {
+            let destinationVC = segue.destination as! PointOfInterestViewController
+            destinationVC.image = captureImageView.image
+        }
+    }
+
     func setupLivePreview() {
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         videoPreviewLayer.videoGravity = .resizeAspectFill
@@ -97,5 +104,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @objc func takePhoto() {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    @objc func addPOIWithPhoto() {
+        performSegue(withIdentifier: "addPOI", sender: nil)
     }
 }
