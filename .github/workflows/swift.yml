@@ -2,7 +2,7 @@ name: Swift
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, cameraSetup ]
   pull_request:
     branches: [ master ]
 
