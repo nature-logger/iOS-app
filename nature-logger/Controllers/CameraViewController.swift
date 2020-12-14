@@ -53,6 +53,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 captureSession.addInput(input)
                 captureSession.addOutput(stillImageOutput)
                 setupLivePreview()
+                previewView.bringSubviewToFront(captureImageView)
             }
         }
         catch _ {
@@ -89,6 +90,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             return
         }
         let image = UIImage(data: imageData)
+        captureImageView.contentMode = .scaleAspectFill
         captureImageView.image = image
     }
     
