@@ -16,6 +16,13 @@
 		9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E9EF1272542138500A1C1B4 /* Main.storyboard */; };
 		9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA04D65255C4DDE00F398AB /* CameraViewController.swift */; };
 		C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */; };
+		D4DCC021258902F3006D8918 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC020258902F3006D8918 /* Plants.swift */; };
+		D4DCC0262589032D006D8918 /* PlantsViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC0252589032D006D8918 /* PlantsViewControllers.swift */; };
+		D4DCC02B258903A3006D8918 /* PlantsDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC02A258903A3006D8918 /* PlantsDetailedViewController.swift */; };
+		D4DCC031258903CA006D8918 /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC030258903CA006D8918 /* ImageDownload.swift */; };
+		D4DCC03725890400006D8918 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC03625890400006D8918 /* LoadingCell.swift */; };
+		D4DCC03C2589043D006D8918 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DCC03B2589043D006D8918 /* CustomTableViewCell.swift */; };
+		D4DCC04125890486006D8918 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DCC04025890486006D8918 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DCC020258902F3006D8918 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
+		D4DCC0252589032D006D8918 /* PlantsViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsViewControllers.swift; sourceTree = "<group>"; };
+		D4DCC02A258903A3006D8918 /* PlantsDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsDetailedViewController.swift; sourceTree = "<group>"; };
+		D4DCC030258903CA006D8918 /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
+		D4DCC03625890400006D8918 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		D4DCC03B2589043D006D8918 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D4DCC04025890486006D8918 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,8 @@
 				9E9EF10F2542135200A1C1B4 /* ViewController.swift */,
 				9EA04D65255C4DDE00F398AB /* CameraViewController.swift */,
 				C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */,
+				D4DCC0252589032D006D8918 /* PlantsViewControllers.swift */,
+				D4DCC02A258903A3006D8918 /* PlantsDetailedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +117,7 @@
 			children = (
 				9E9EF1252542138500A1C1B4 /* LaunchScreen.storyboard */,
 				9E9EF1272542138500A1C1B4 /* Main.storyboard */,
+				D4DCC04025890486006D8918 /* LoadingCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */,
+				D4DCC020258902F3006D8918 /* Plants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +152,8 @@
 		C74EB426252A2DD600CAC644 /* nature-logger */ = {
 			isa = PBXGroup;
 			children = (
+				D4DCC035258903EC006D8918 /* Cells */,
+				D4DCC02F258903B2006D8918 /* Utils */,
 				9E9EF12E2542141600A1C1B4 /* Models */,
 				9E9EF1242542138500A1C1B4 /* Views */,
 				9E9EF1172542136400A1C1B4 /* Supporting files */,
@@ -141,6 +161,23 @@
 				C74EB435252A2DD700CAC644 /* Info.plist */,
 			);
 			path = "nature-logger";
+			sourceTree = "<group>";
+		};
+		D4DCC02F258903B2006D8918 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D4DCC030258903CA006D8918 /* ImageDownload.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D4DCC035258903EC006D8918 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4DCC03625890400006D8918 /* LoadingCell.swift */,
+				D4DCC03B2589043D006D8918 /* CustomTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +286,7 @@
 			files = (
 				9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */,
 				9E9EF11D2542137100A1C1B4 /* Assets.xcassets in Resources */,
+				D4DCC04125890486006D8918 /* LoadingCell.xib in Resources */,
 				9E9EF1292542138500A1C1B4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +314,13 @@
 			files = (
 				9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */,
 				9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */,
+				D4DCC0262589032D006D8918 /* PlantsViewControllers.swift in Sources */,
+				D4DCC03725890400006D8918 /* LoadingCell.swift in Sources */,
+				D4DCC021258902F3006D8918 /* Plants.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
+				D4DCC03C2589043D006D8918 /* CustomTableViewCell.swift in Sources */,
+				D4DCC031258903CA006D8918 /* ImageDownload.swift in Sources */,
+				D4DCC02B258903A3006D8918 /* PlantsDetailedViewController.swift in Sources */,
 				9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */,
 				C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */,
 				9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */,
