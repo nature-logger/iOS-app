@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var addentryButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var entriesButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func addEntry(_ sender: Any) {
+    }
+    @IBAction func viewSearch(_ sender: Any) {
+    }
+    @IBAction func viewEntries(_ sender: Any) {
+    }
 }
 
