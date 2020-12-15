@@ -12,9 +12,6 @@ class PlantsDetailedViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var attrLabel: UILabel!
-    @IBOutlet weak var attackLabel: UILabel!
-    @IBOutlet weak var legsLabel: UILabel!
     
     var hero:Plants.Result?
     

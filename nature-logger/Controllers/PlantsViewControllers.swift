@@ -22,6 +22,7 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         let loadingNib = UINib(nibName: "LoadingCell", bundle: nil)
         downloadJSON {
             self.tableView.reloadData()
@@ -50,12 +51,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 0
         
     }
-    /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = heros[indexPath.row].localized_name.capitalized
-        return cell
-    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.section == 0){
@@ -106,6 +101,8 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         })
     }
+    
+    // Needs to fix space search issue
 
     func downloadJSON(completed: @escaping () -> ()){
         var urlString = "https://trefle.io/api/v1/plants/?token=sqvdZFYkPO5aF0BmIMYoJAkU5hCNM7-uzXdhTmc3row&page=1"
@@ -122,10 +119,14 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if error == nil {
                 do {
                     let jsonData = try JSONDecoder().decode(Plants.self, from: data!)
-                    //self.heros.append(contentsOf: jsonData.data)
-                    self.heros = jsonData.data
+                    
+                    if(self.page == 1){
+                        self.heros = jsonData.data
+                    }else{
+                        self.heros.append(contentsOf: jsonData.data)
+                    }
                     self.page = self.page + 1
-                    print(jsonData)
+
                     DispatchQueue.main.async {
                         completed()
                     }
@@ -141,7 +142,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
 extension PlantsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText);
         self.setSearch(value: searchText)
         self.beginBatchFetch()
     }
