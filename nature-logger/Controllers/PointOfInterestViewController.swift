@@ -25,6 +25,9 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBOutlet weak var capturedImage: UIImageView!
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,9 @@ class PointOfInterestViewController: UIViewController {
         capturedImage.image = imageValue
     }
     
-
+    @IBAction func submitEntry(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
