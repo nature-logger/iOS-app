@@ -26,8 +26,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         var items = toolBar.items
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(takePhoto))
+        let searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(searchPlants))
         let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: #selector(addPOIWithPhoto))
+        let logButton = UIBarButtonItem.init(barButtonSystemItem: .bookmarks, target: self, action: nil)
         
+        items?.append(logButton)
+        items?.append(spacer)
+        items?.append(searchButton)
         items?.append(spacer)
         items?.append(cameraButton)
         items?.append(spacer)
@@ -104,6 +109,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @objc func takePhoto() {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.hevc])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    @objc func searchPlants() {
+        let storyboard = UIStoryboard(name: "Search", bundle: nil)
+        let searchViewController = storyboard.instantiateViewController(identifier: "SearchViewController")
+        show(searchViewController, sender: self)
     }
     
     @objc func addPOIWithPhoto() {
