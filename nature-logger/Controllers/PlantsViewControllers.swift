@@ -172,7 +172,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.plants.append(contentsOf: jsonData.data)
             }
             self.page = self.page + 1
-            print(self.page)
             DispatchQueue.main.async {
                 completed()
             }
