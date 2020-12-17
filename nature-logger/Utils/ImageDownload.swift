@@ -10,18 +10,22 @@ import Foundation
 
 class ImageDownload {
     
+    /// - Description: Downloads the data from the image url and runs the completion function
+    ///
+    /// - Parameter url: URL to fetch the data from
+    /// - Parameter completion: Function to execute once the fetching is done
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
+    /// - Description: Handles the data from the getData function async and update the main thread once finished
+    ///
+    /// - Parameter url: URL to fetch the data from
+    /// - Parameter completed: Function to execute once the function is done
     func downloadImage(from url: URL, completed: @escaping (Data?) -> ()) {
-        print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
             DispatchQueue.main.async() { [weak self] in
-                //self?.imageView.image = UIImage(data: data)
                 completed(data)
             }
         }

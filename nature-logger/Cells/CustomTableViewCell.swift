@@ -13,9 +13,4 @@ class CustomTableViewCell : UITableViewCell {
     @IBOutlet weak var plantTitle: UILabel!
     @IBOutlet weak var plantCell: UIView!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
 }
