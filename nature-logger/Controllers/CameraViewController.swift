@@ -112,8 +112,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     @objc func searchPlants() {
-        let storyboard = UIStoryboard(name: "Search", bundle: nil)
-        let searchViewController = storyboard.instantiateViewController(identifier: "SearchViewController")
+        let storyboard = UIStoryboard(name: "Plants", bundle: nil)
+        let searchViewController = storyboard.instantiateViewController(identifier: "PlantsViewController")
         show(searchViewController, sender: self)
     }
     
