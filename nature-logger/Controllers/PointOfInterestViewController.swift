@@ -40,8 +40,9 @@ class PointOfInterestViewController: UIViewController {
         titleText.layer.cornerRadius = 10
         titleText.clipsToBounds = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        registerNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,22 +58,40 @@ class PointOfInterestViewController: UIViewController {
     @IBAction func submitEntry(_ sender: Any) {
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        guard let userInfo = notification.userInfo, !keyboardIsOpen, var keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
+    func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {
+        let isKeyboardInUse = !keyboardIsOpen && keyboardShown || keyboardIsOpen && !keyboardShown
+        
+        guard let userInfo = notification.userInfo, isKeyboardInUse, var keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
         else {
             return
         }
         keyboardSize = self.view.convert(keyboardSize, from: nil)
-        self.scrollView.contentInset.bottom = keyboardSize.size.height
         var contentOffset = scrollView.contentOffset
-        contentOffset.y += keyboardSize.size.height
+        if (keyboardIsOpen) {
+            self.scrollView.contentInset = .zero
+            contentOffset.y -= keyboardSize.size.height
+        } else {
+            self.scrollView.contentInset.bottom = keyboardSize.size.height
+            contentOffset.y += keyboardSize.size.height
+        }
+        keyboardIsOpen = !keyboardIsOpen
         self.scrollView.setContentOffset(contentOffset, animated: false)
-        keyboardIsOpen = true
+    }
+    
+    func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        setInsentAndScroll(notification: notification, keyboardShown: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = UIEdgeInsets.zero
-        // TODO: function for hide keyboard
-        keyboardIsOpen = false
+        setInsentAndScroll(notification: notification, keyboardShown: false)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
