@@ -24,6 +24,13 @@ class PointOfInterestViewController: UIViewController {
         }
     }
     var keyboardIsOpen = false
+    var poiImage: POIImage? {
+        if (image != nil) {
+            return POIImage(image: image!)
+        } else {
+            return nil
+        }
+    }
     
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var titleText: UITextField!
@@ -56,6 +63,7 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBAction func submitEntry(_ sender: Any) {
+        self.poiImage?.saveImage()
     }
     
     func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {

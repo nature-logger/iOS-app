@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E49068A258B85D6007CC35E /* POI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E490688258B85D6007CC35E /* POI.storyboard */; };
+		9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4906A9258BBA8A007CC35E /* POIImage.swift */; };
 		9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */; };
 		9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF10F2542135200A1C1B4 /* ViewController.swift */; };
 		9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF1182542137100A1C1B4 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		9E490689258B85D6007CC35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/POI.storyboard; sourceTree = "<group>"; };
+		9E4906A9258BBA8A007CC35E /* POIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIImage.swift; sourceTree = "<group>"; };
 		9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
 		9E9EF10F2542135200A1C1B4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E9EF1182542137100A1C1B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */,
+				9E4906A9258BBA8A007CC35E /* POIImage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */,
 				9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */,
 				9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
