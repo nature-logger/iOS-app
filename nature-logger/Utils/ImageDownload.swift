@@ -25,7 +25,7 @@ class ImageDownload {
     func downloadImage(from url: URL, completed: @escaping (Data?) -> ()) {
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
-            DispatchQueue.main.async() { [weak self] in
+            DispatchQueue.main.async() {
                 completed(data)
             }
         }
