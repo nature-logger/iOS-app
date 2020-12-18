@@ -32,16 +32,17 @@ struct PointOfInterest: Codable {
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String) {
+    init(title: String, description: String?) {
         self.created = Date()
         self.title = title
+        self.description = description
     }
     	
     public mutating func setTitle(title: String){
         self.title = title
     }
     
-    public mutating func setImagePath(url: URL){
+    public mutating func setImagePath(url: URL?){
         imagePath = url
     }
     

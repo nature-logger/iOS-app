@@ -23,13 +23,33 @@ class PointOfInterestViewController: UIViewController {
             }
         }
     }
+    var keyboardIsOpen = false
+    var poiImage: POIImage? {
+        if (image != nil) {
+            return POIImage(image: image!)
+        } else {
+            return nil
+        }
+    }
     
     @IBOutlet weak var capturedImage: UIImageView!
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        submitButton.layer.cornerRadius = 10
+        submitButton.clipsToBounds = true
+        descriptionText.layer.cornerRadius = 10
+        descriptionText.clipsToBounds = true
+        titleText.layer.cornerRadius = 10
+        titleText.clipsToBounds = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        registerNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,15 +57,55 @@ class PointOfInterestViewController: UIViewController {
         capturedImage.image = imageValue
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
-    */
-
+    
+    @IBAction func submitEntry(_ sender: Any) {
+        self.poiImage?.saveImage()
+        let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "LogEntriesViewController") as! LogEntriesViewController
+        var poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text)
+        poi.setImagePath(url: self.poiImage?.filename)
+        viewController.addEntry(poi: poi)
+        show(viewController, sender: self)
+    }
+    
+    func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {
+        let isKeyboardInUse = !keyboardIsOpen && keyboardShown || keyboardIsOpen && !keyboardShown
+        
+        guard let userInfo = notification.userInfo, isKeyboardInUse, var keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
+        else {
+            return
+        }
+        keyboardSize = self.view.convert(keyboardSize, from: nil)
+        var contentOffset = scrollView.contentOffset
+        if (keyboardIsOpen) {
+            self.scrollView.contentInset = .zero
+            contentOffset.y -= keyboardSize.size.height
+        } else {
+            self.scrollView.contentInset.bottom = keyboardSize.size.height
+            contentOffset.y += keyboardSize.size.height
+        }
+        keyboardIsOpen = !keyboardIsOpen
+        self.scrollView.setContentOffset(contentOffset, animated: false)
+    }
+    
+    func registerNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        setInsentAndScroll(notification: notification, keyboardShown: true)
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        setInsentAndScroll(notification: notification, keyboardShown: false)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
