@@ -12,10 +12,12 @@ class LogEntries: Codable {
     var pois: [PointOfInterest] = []
     var file = "entries.json"
     
-    init(poi: PointOfInterest) {
+    init(_ poi: PointOfInterest?) {
         self.readFromPath()
-        self.pois.append(poi)
-        self.saveToPath()
+        if (poi != nil){
+            self.pois.append(poi!)
+            self.saveToPath()
+        }
     }
     
     func saveToPath() {

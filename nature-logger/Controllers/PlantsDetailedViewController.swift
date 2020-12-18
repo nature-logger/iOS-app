@@ -30,6 +30,5 @@ class PlantsDetailedViewController: UIViewController {
         ImageDownload().downloadImage(from: imageUrl, completed: {data in
             self.imageView.image = UIImage(data: data!)
         });
-        
     }
 }

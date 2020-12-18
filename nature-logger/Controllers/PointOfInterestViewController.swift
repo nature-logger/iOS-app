@@ -68,7 +68,7 @@ class PointOfInterestViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: "LogEntriesViewController") as! LogEntriesViewController
         var poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text)
         poi.setImagePath(url: self.poiImage?.filename)
-        viewController.addEntry(poi: poi)
+        viewController.poi = poi
         show(viewController, sender: self)
     }
     

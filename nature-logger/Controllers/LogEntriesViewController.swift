@@ -11,8 +11,10 @@ import UIKit
 class LogEntriesViewController: UIViewController {
     
     private var logEntries: LogEntries?
+    var poi: PointOfInterest?
     
-    func addEntry(poi: PointOfInterest) {
-        logEntries = LogEntries(poi: poi)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        logEntries = LogEntries(poi)
     }
 }
