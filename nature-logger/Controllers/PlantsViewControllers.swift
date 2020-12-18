@@ -10,7 +10,7 @@
 import UIKit
 
 class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,7 +28,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     ///
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         let loadingNib = UINib(nibName: "LoadingCell", bundle: nil)
         self.download() {
@@ -175,10 +174,9 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             DispatchQueue.main.async {
                 completed()
             }
-                
+            
         }catch{
             alertResponse();
-            print("JSON Error")
         }
     }
     
@@ -196,7 +194,7 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         components.path = "/api/v1/plants/"
         let queryItemToken = URLQueryItem(name: "token", value: token) // sqvdZFYkPO5aF0BmIMYoJAkU5hCNM7-uzXdhTmc3row
         let queryItemPage = URLQueryItem(name: "page", value: String(page))
-
+        
         components.queryItems = [queryItemToken, queryItemPage]
         
         if(search.isEmpty == false){
@@ -206,7 +204,7 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         return URL(string: components.url!.absoluteString)
-            
+        
     }
     
     /// - Description: This function fetchtes the data from the API URL.
@@ -214,7 +212,7 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     ///
     /// - Parameter completed: Function that is run when the URLSession is completed
     func download(completed: @escaping () -> ()){
-
+        
         let url = getApiUrl(token: self.APIToken, page: self.page, search: self.searchString)
         URLSession.shared.dataTask(with: url!){ (data,response, error) in
             if error == nil {
@@ -232,10 +230,10 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func alertResponse() {
         // create the alert
         let alert = UIAlertController(title: "Json error", message: "Something went wrong.", preferredStyle: UIAlertController.Style.alert)
-
+        
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
+        
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
