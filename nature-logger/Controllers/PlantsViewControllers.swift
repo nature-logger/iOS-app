@@ -24,7 +24,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /// Then it will download the json from the plants API url and pass the data into the table
     /// The table will then reload then reload and show the new data
     ///
-    ///
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -171,7 +170,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.plants.append(contentsOf: jsonData.data)
             }
             self.page = self.page + 1
-            print(self.page)
             DispatchQueue.main.async {
                 completed()
             }
