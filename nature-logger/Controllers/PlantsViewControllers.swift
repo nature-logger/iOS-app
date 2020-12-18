@@ -24,7 +24,6 @@ class PlantsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /// Then it will download the json from the plants API url and pass the data into the table
     /// The table will then reload then reload and show the new data
     ///
-    /// - Parameter value: the search string value
     ///
     override func viewDidLoad() {
         super.viewDidLoad()
