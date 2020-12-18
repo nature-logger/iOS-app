@@ -64,6 +64,12 @@ class PointOfInterestViewController: UIViewController {
     
     @IBAction func submitEntry(_ sender: Any) {
         self.poiImage?.saveImage()
+        let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
+        let viewController = storyboard.instantiateViewController(identifier: "LogEntriesViewController") as! LogEntriesViewController
+        var poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text)
+        poi.setImagePath(url: self.poiImage?.filename)
+        viewController.addEntry(poi: poi)
+        show(viewController, sender: self)
     }
     
     func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {

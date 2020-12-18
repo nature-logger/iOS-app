@@ -10,6 +10,9 @@
 		9E49068A258B85D6007CC35E /* POI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E490688258B85D6007CC35E /* POI.storyboard */; };
 		9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4906A9258BBA8A007CC35E /* POIImage.swift */; };
 		9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */; };
+		9E6622DD258CA9DF00EC23BC /* LogEntries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6622DC258CA9DF00EC23BC /* LogEntries.storyboard */; };
+		9E6622E2258CAAD600EC23BC /* LogEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */; };
+		9E6622E7258CAB6500EC23BC /* LogEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6622E6258CAB6500EC23BC /* LogEntries.swift */; };
 		9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF10F2542135200A1C1B4 /* ViewController.swift */; };
 		9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF1182542137100A1C1B4 /* AppDelegate.swift */; };
 		9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF1192542137100A1C1B4 /* SceneDelegate.swift */; };
@@ -41,6 +44,9 @@
 		9E490689258B85D6007CC35E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/POI.storyboard; sourceTree = "<group>"; };
 		9E4906A9258BBA8A007CC35E /* POIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIImage.swift; sourceTree = "<group>"; };
 		9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
+		9E6622DC258CA9DF00EC23BC /* LogEntries.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogEntries.storyboard; sourceTree = "<group>"; };
+		9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntriesViewController.swift; sourceTree = "<group>"; };
+		9E6622E6258CAB6500EC23BC /* LogEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntries.swift; sourceTree = "<group>"; };
 		9E9EF10F2542135200A1C1B4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9E9EF1182542137100A1C1B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E9EF1192542137100A1C1B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 				9E9EF10F2542135200A1C1B4 /* ViewController.swift */,
 				9EA04D65255C4DDE00F398AB /* CameraViewController.swift */,
 				C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */,
+				9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				9E490688258B85D6007CC35E /* POI.storyboard */,
+				9E6622DC258CA9DF00EC23BC /* LogEntries.storyboard */,
 				9E9EF1252542138500A1C1B4 /* LaunchScreen.storyboard */,
 				9E9EF1272542138500A1C1B4 /* Main.storyboard */,
 			);
@@ -115,6 +123,7 @@
 			children = (
 				9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */,
 				9E4906A9258BBA8A007CC35E /* POIImage.swift */,
+				9E6622E6258CAB6500EC23BC /* LogEntries.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +265,7 @@
 				9E9EF12A2542138500A1C1B4 /* Main.storyboard in Resources */,
 				9E49068A258B85D6007CC35E /* POI.storyboard in Resources */,
 				9E9EF11D2542137100A1C1B4 /* Assets.xcassets in Resources */,
+				9E6622DD258CA9DF00EC23BC /* LogEntries.storyboard in Resources */,
 				9E9EF1292542138500A1C1B4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,8 +293,10 @@
 			files = (
 				9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */,
 				9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */,
+				9E6622E7258CAB6500EC23BC /* LogEntries.swift in Sources */,
 				9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
+				9E6622E2258CAAD600EC23BC /* LogEntriesViewController.swift in Sources */,
 				9E9EF1102542135200A1C1B4 /* ViewController.swift in Sources */,
 				C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */,
 				9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */,
