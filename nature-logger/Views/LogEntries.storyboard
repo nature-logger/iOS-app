@@ -11,7 +11,7 @@
         <!--Log Entries Table View Controller-->
         <scene sceneID="fee-55-d2p">
             <objects>
-                <viewController storyboardIdentifier="LogEntriesViewController" id="6IP-6K-aZf" customClass="LogEntriesTableViewController" customModule="nature_logger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogEntriesTableViewController" id="6IP-6K-aZf" customClass="LogEntriesTableViewController" customModule="nature_logger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zgz-pI-LFg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
