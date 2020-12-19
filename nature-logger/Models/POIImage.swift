@@ -20,7 +20,7 @@ class POIImage {
     
     init(image: UIImage) {
         self.image = image
-        self.id = UUID().uuidString.replacingOccurrences(of: "-", with: "_").lowercased()
+        self.id = UUID().uuidString.replacingOccurrences(of: "-", with: "_").lowercased() + ".jpg"
     }
     
     func saveImage() {
