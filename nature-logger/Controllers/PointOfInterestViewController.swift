@@ -19,6 +19,7 @@ class PointOfInterestViewController: UIViewController {
             if let imageView = capturedImage {
                 imageView.image = newValue
             } else {
+                // Cache image until view is rendered.
                 imageValue = newValue
             }
         }
@@ -63,13 +64,12 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBAction func submitEntry(_ sender: Any) {
-        self.poiImage?.saveImage()
+        let fileName = self.poiImage?.saveImage()
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "LogEntriesViewController") as! LogEntriesViewController
-        var poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text)
-        poi.setImagePath(url: self.poiImage?.filename)
-        viewController.addEntry(poi: poi)
-        show(viewController, sender: self)
+        let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
+        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, imageFileName: fileName)
+        logEntriesTableViewController.poi = poi
+        show(logEntriesTableViewController, sender: self)
     }
     
     func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {

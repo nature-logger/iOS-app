@@ -28,7 +28,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let cameraButton = UIBarButtonItem.init(barButtonSystemItem: .camera, target: self, action: #selector(takePhoto))
         let searchButton = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: #selector(searchPlants))
         let plusButton = UIBarButtonItem.init(barButtonSystemItem: .compose, target: self, action: #selector(addPOIWithPhoto))
-        let logButton = UIBarButtonItem.init(barButtonSystemItem: .bookmarks, target: self, action: nil)
+        let logButton = UIBarButtonItem.init(barButtonSystemItem: .bookmarks, target: self, action: #selector(showLogEntries))
         
         items?.append(logButton)
         items?.append(spacer)
@@ -64,10 +64,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         catch _ {
             print("Unable to initialize backcamera")
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,5 +115,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     @objc func addPOIWithPhoto() {
         performSegue(withIdentifier: "addPOI", sender: nil)
+    }
+    
+    @objc func showLogEntries(){
+        let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
+        let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
+        show(logEntriesTableViewController, sender: self)
     }
 }

@@ -10,24 +10,27 @@ import Foundation
 import UIKit
 
 class POIImage {
+    private let fileExtension = ".jpg"
     private var image: UIImage
-    let id = UUID().uuidString
-    var filename: URL? {
-        getDocumentsDirectory()?.appendingPathComponent(id).appendingPathExtension("png")
-    }
+    
     
     init(image: UIImage) {
         self.image = image
     }
     
-    func getDocumentsDirectory() -> URL? {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-    }
-    
-    func saveImage() {
-        guard filename != nil else {
-            return
+    func saveImage() -> String? {
+        if let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileName =  UUID().uuidString + fileExtension
+            let fileURL = filePath.appendingPathComponent(fileName)
+            if let imageData = image.jpegData(compressionQuality: 1.0) {
+                do {
+                    try imageData.write(to: fileURL, options: .atomic)
+                    return fileName
+                } catch {
+                   print(error)
+                }
+            }
         }
-        try? image.pngData()?.write(to: filename!)
+        return nil
     }
 }
