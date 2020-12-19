@@ -10,10 +10,6 @@ import UIKit
 
 class LogEntriesTableViewController: UITableViewController {
     
-    var documentsUrl: URL {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    }
-    
     private var logEntries: LogEntries?
     var poi: PointOfInterest?
     let cellIdentifier = "logEntryTemplate"

@@ -29,15 +29,15 @@ class PointOfInterest: Codable {
         }
     }
     private(set) var description: String?
-    private(set) var fileName: String?
+    private(set) var imageFileName: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?, fileName: String?) {
+    init(title: String, description: String?, imageFileName: String?) {
         self.created = Date()
         self.title = title
         self.description = description
-        self.fileName = fileName
+        self.imageFileName = imageFileName
     }
     
     public func setTitle(title: String){
@@ -53,8 +53,8 @@ class PointOfInterest: Codable {
     }
     
     func loadImage() -> UIImage? {
-        if let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, fileName != nil {
-            let fileURL = filePath.appendingPathComponent(fileName!)
+        if let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, imageFileName != nil {
+            let fileURL = filePath.appendingPathComponent(imageFileName!)
             do {
                 let imageData = try Data(contentsOf: fileURL)
                 return UIImage(data: imageData)

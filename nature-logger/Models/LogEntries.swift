@@ -18,7 +18,6 @@ class LogEntries: Codable {
             self.pois.append(poi!)
             self.saveToPath()
         }
-        print(pois)
     }
     
     func saveToPath() {
@@ -27,7 +26,6 @@ class LogEntries: Codable {
             let data = try? jsonEncoder.encode(pois)
             let fileURL = dir.appendingPathComponent(file)
             try? data?.write(to: fileURL)
-            print(pois)
         }
     }
     
