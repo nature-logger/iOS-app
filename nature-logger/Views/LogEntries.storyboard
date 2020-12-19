@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Log Entries Table View Controller-->
+        <!--Log Entries View Controller-->
         <scene sceneID="fee-55-d2p">
             <objects>
-                <viewController storyboardIdentifier="LogEntriesViewController" id="6IP-6K-aZf" customClass="LogEntriesTableViewController" customModule="nature_logger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogEntriesViewController" id="6IP-6K-aZf" customClass="LogEntriesViewController" customModule="nature_logger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jAi-WQ-Zrj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
