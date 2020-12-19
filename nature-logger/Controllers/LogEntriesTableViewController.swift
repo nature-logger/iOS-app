@@ -53,21 +53,26 @@ class LogEntriesTableViewController: UITableViewController {
         }
         
         let poi = logEntries!.pois[indexPath.row]
-        print(poi.imagePath)
         
-        let fileURL = documentsUrl.appendingPathComponent("poiimage")
-        do {
-            let imageData = try Data(contentsOf: fileURL)
-            cell.logEntryImage.image =  UIImage(data: imageData)
-        } catch {
-            print("Error loading image : \(error)")
+        if poi.imagePath != nil, let image = loadImage(id: poi.imagePath!) {
+            cell.logEntryImage.image = image
         }
-        
         
         cell.logEntryTitle.text = poi.title
         
         cell.logEntryDescription.text = poi.description
         
         return cell
+    }
+    
+    func loadImage(id: String) -> UIImage? {
+        let fileURL = documentsUrl.appendingPathComponent(id)
+        do {
+            let imageData = try Data(contentsOf: fileURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error loading image : \(error)")
+            return nil
+        }
     }
 }
