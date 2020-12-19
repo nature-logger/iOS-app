@@ -28,6 +28,7 @@
 		9EFD117D258CCF06007E9F66 /* PlantsDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD117A258CCF06007E9F66 /* PlantsDetailedViewController.swift */; };
 		9EFD117E258CCF06007E9F66 /* PlantsViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD117B258CCF06007E9F66 /* PlantsViewControllers.swift */; };
 		C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */; };
+		C743146A258E489900EC4609 /* LogEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7431469258E489900EC4609 /* LogEntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		9EFD117A258CCF06007E9F66 /* PlantsDetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsDetailedViewController.swift; sourceTree = "<group>"; };
 		9EFD117B258CCF06007E9F66 /* PlantsViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsViewControllers.swift; sourceTree = "<group>"; };
 		C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
+		C7431469258E489900EC4609 /* LogEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryTableViewCell.swift; sourceTree = "<group>"; };
 		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +161,7 @@
 			children = (
 				9EFD1173258CCD96007E9F66 /* CustomTableViewCell.swift */,
 				9EFD1174258CCD96007E9F66 /* LoadingCell.swift */,
+				C7431469258E489900EC4609 /* LogEntryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C743146A258E489900EC4609 /* LogEntryTableViewCell.swift in Sources */,
 				9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */,
 				9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */,
 				9EFD117D258CCF06007E9F66 /* PlantsDetailedViewController.swift in Sources */,

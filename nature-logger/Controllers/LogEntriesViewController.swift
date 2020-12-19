@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogEntriesViewController: UIViewController {
+class LogEntriesViewController: UIViewController{
     
     private var logEntries: LogEntries?
     var poi: PointOfInterest?
