@@ -12,9 +12,9 @@ class LogEntriesViewController: UIViewController{
     
     private var logEntries: LogEntries?
     var poi: PointOfInterest?
-    
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         logEntries = LogEntries(poi)
-    }
+    }*/
 }
