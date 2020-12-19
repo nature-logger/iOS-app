@@ -23,7 +23,7 @@ class POIImage {
     
     func saveImage() -> String? {
         if (documentsUrl != nil){
-            let fileName =  UUID().uuidString.replacingOccurrences(of: "-", with: "_").lowercased() + ".jpg"
+            let fileName =  UUID().uuidString + ".jpg"
             let fileURL = documentsUrl!.appendingPathComponent(fileName)
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 do {
