@@ -11,7 +11,7 @@ import UIKit
 
 class POIImage {
     private var image: UIImage
-    let id = "poiimage"
+    let id: String
     
     private var documentsUrl: URL? {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -20,6 +20,7 @@ class POIImage {
     
     init(image: UIImage) {
         self.image = image
+        self.id = UUID().uuidString.replacingOccurrences(of: "-", with: "_").lowercased()
     }
     
     func saveImage() {
