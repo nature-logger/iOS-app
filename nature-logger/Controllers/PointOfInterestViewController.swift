@@ -19,6 +19,7 @@ class PointOfInterestViewController: UIViewController {
             if let imageView = capturedImage {
                 imageView.image = newValue
             } else {
+                // Cache image until view is rendered.
                 imageValue = newValue
             }
         }
@@ -63,11 +64,10 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBAction func submitEntry(_ sender: Any) {
-        self.poiImage?.saveImage()
+        self.poiImage?.saveImage() 
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
         let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
-        var poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text)
-        poi.setImagePath(url: self.poiImage?.filename)
+        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, imagePath: self.poiImage?.filename)
         logEntriesTableViewController.poi = poi
         show(logEntriesTableViewController, sender: self)
     }

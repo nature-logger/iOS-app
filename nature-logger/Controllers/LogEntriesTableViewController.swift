@@ -49,10 +49,12 @@ class LogEntriesTableViewController: UITableViewController {
         }
         
         let poi = logEntries!.pois[indexPath.row]
+        print(poi.imagePath)
         
-        if poi.imagePath != nil, let imageData = NSData(contentsOf: poi.imagePath!) {
-            let image = UIImage(data: Data(referencing: imageData))
-            cell.logEntryImage.image = image
+        if let imageValuePath = poi.filePath() {
+            if let image = UIImage.init(withName: imageValuePath) {
+                cell.logEntryImage.image = image
+            }
         }
         
         cell.logEntryTitle.text = poi.title

@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct PointOfInterest: Codable {
+class PointOfInterest: Codable {
     let created: Date
     private var longitude: Double?
     private var latitude: Double?
@@ -28,29 +28,35 @@ struct PointOfInterest: Codable {
         }
     }
     private(set) var description: String?
-    private(set) var imagePath: URL?
+    private(set) var imagePath: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?) {
+    init(title: String, description: String?, imagePath: String?) {
         self.created = Date()
         self.title = title
         self.description = description
+        self.imagePath = imagePath
     }
     	
-    public mutating func setTitle(title: String){
+    public func setTitle(title: String){
         self.title = title
     }
     
-    public mutating func setImagePath(url: URL?){
-        imagePath = url
-    }
-    
-    public mutating func setOwner(owner: String){
+    public func setOwner(owner: String){
         self.owner = owner
     }
     
-    public mutating func setDescription(description: String){
+    public func setDescription(description: String){
         self.description = description
+    }
+    
+    func filePath() -> URL? {
+        if let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first, imagePath != nil {
+            let imageURL = URL(fileURLWithPath: paths).appendingPathComponent(imagePath!)
+            return imageURL
+        } else {
+            return nil
+        }
     }
 }

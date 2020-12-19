@@ -18,6 +18,7 @@ class LogEntries: Codable {
             self.pois.append(poi!)
             self.saveToPath()
         }
+        print(pois)
     }
     
     func saveToPath() {

@@ -12,22 +12,15 @@ import UIKit
 class POIImage {
     private var image: UIImage
     let id = UUID().uuidString
-    var filename: URL? {
-        getDocumentsDirectory()?.appendingPathComponent(id).appendingPathExtension("png")
+    var filename: String {
+        id + ".jpeg"
     }
     
     init(image: UIImage) {
         self.image = image
     }
     
-    func getDocumentsDirectory() -> URL? {
-        FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-    }
-    
     func saveImage() {
-        guard filename != nil else {
-            return
-        }
-        try? image.pngData()?.write(to: filename!)
+        self.image.saveImage(imageName: filename)
     }
 }
