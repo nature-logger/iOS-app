@@ -64,10 +64,10 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBAction func submitEntry(_ sender: Any) {
-        self.poiImage?.saveImage() 
+        let fileName = self.poiImage?.saveImage()
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
         let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
-        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, uuid: self.poiImage?.id)
+        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, uuid: fileName)
         logEntriesTableViewController.poi = poi
         show(logEntriesTableViewController, sender: self)
     }
