@@ -119,7 +119,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     @objc func showLogEntries(){
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
-        let logEntriesViewController = storyboard.instantiateViewController(identifier: "LogEntriesViewController") as! LogEntriesViewController
-        show(logEntriesViewController, sender: self)
+        let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
+        show(logEntriesTableViewController, sender: self)
     }
 }

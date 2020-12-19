@@ -11,7 +11,6 @@
 		9E4906AA258BBA8A007CC35E /* POIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4906A9258BBA8A007CC35E /* POIImage.swift */; };
 		9E5A8C4E25532FE0000673FD /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */; };
 		9E6622DD258CA9DF00EC23BC /* LogEntries.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6622DC258CA9DF00EC23BC /* LogEntries.storyboard */; };
-		9E6622E2258CAAD600EC23BC /* LogEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */; };
 		9E6622E7258CAB6500EC23BC /* LogEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6622E6258CAB6500EC23BC /* LogEntries.swift */; };
 		9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF1182542137100A1C1B4 /* AppDelegate.swift */; };
 		9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9EF1192542137100A1C1B4 /* SceneDelegate.swift */; };
@@ -29,7 +28,7 @@
 		9EFD117E258CCF06007E9F66 /* PlantsViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD117B258CCF06007E9F66 /* PlantsViewControllers.swift */; };
 		C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */; };
 		C743146A258E489900EC4609 /* LogEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7431469258E489900EC4609 /* LogEntryTableViewCell.swift */; };
-		C743146F258E524100EC4609 /* LogEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C743146E258E524100EC4609 /* LogEntriesTableViewController.swift */; };
+		C7A0BF49258E5BDF006EE9D8 /* LogEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A0BF48258E5BDF006EE9D8 /* LogEntriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		9E4906A9258BBA8A007CC35E /* POIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIImage.swift; sourceTree = "<group>"; };
 		9E5A8C4D25532FE0000673FD /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
 		9E6622DC258CA9DF00EC23BC /* LogEntries.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogEntries.storyboard; sourceTree = "<group>"; };
-		9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntriesViewController.swift; sourceTree = "<group>"; };
 		9E6622E6258CAB6500EC23BC /* LogEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntries.swift; sourceTree = "<group>"; };
 		9E9EF1182542137100A1C1B4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E9EF1192542137100A1C1B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,11 +70,11 @@
 		9EFD117B258CCF06007E9F66 /* PlantsViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlantsViewControllers.swift; sourceTree = "<group>"; };
 		C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
 		C7431469258E489900EC4609 /* LogEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntryTableViewCell.swift; sourceTree = "<group>"; };
-		C743146E258E524100EC4609 /* LogEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntriesTableViewController.swift; sourceTree = "<group>"; };
 		C74EB424252A2DD600CAC644 /* nature-logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nature-logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB435252A2DD700CAC644 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C74EB43A252A2DD700CAC644 /* nature-loggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74EB445252A2DD700CAC644 /* nature-loggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nature-loggerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A0BF48258E5BDF006EE9D8 /* LogEntriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				9EFD117A258CCF06007E9F66 /* PlantsDetailedViewController.swift */,
+				C7A0BF48258E5BDF006EE9D8 /* LogEntriesTableViewController.swift */,
 				9EFD117B258CCF06007E9F66 /* PlantsViewControllers.swift */,
 				9EA04D65255C4DDE00F398AB /* CameraViewController.swift */,
 				C7421832255D50D100557BE2 /* PointOfInterestViewController.swift */,
-				9E6622E1258CAAD600EC23BC /* LogEntriesViewController.swift */,
-				C743146E258E524100EC4609 /* LogEntriesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -345,11 +342,10 @@
 				9EA04D66255C4DDE00F398AB /* CameraViewController.swift in Sources */,
 				9E9EF11B2542137100A1C1B4 /* AppDelegate.swift in Sources */,
 				9EFD1175258CCD96007E9F66 /* CustomTableViewCell.swift in Sources */,
-				C743146F258E524100EC4609 /* LogEntriesTableViewController.swift in Sources */,
+				C7A0BF49258E5BDF006EE9D8 /* LogEntriesTableViewController.swift in Sources */,
 				9EFD117E258CCF06007E9F66 /* PlantsViewControllers.swift in Sources */,
 				9EFD1176258CCD96007E9F66 /* LoadingCell.swift in Sources */,
 				9EFD1161258CC93D007E9F66 /* Plants.swift in Sources */,
-				9E6622E2258CAAD600EC23BC /* LogEntriesViewController.swift in Sources */,
 				C7421833255D50D100557BE2 /* PointOfInterestViewController.swift in Sources */,
 				9E9EF11C2542137100A1C1B4 /* SceneDelegate.swift in Sources */,
 			);

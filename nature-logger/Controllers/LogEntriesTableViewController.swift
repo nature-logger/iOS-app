@@ -17,7 +17,7 @@ class LogEntriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logEntries = LogEntries(nil)
+        logEntries = LogEntries(poi)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
