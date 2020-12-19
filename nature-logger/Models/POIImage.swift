@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 class POIImage {
+    private let fileExtension = ".jpg"
     private var image: UIImage
-    
-    private var documentsUrl: URL? {
-        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-    }
     
     
     init(image: UIImage) {
@@ -22,9 +19,9 @@ class POIImage {
     }
     
     func saveImage() -> String? {
-        if (documentsUrl != nil){
-            let fileName =  UUID().uuidString + ".jpg"
-            let fileURL = documentsUrl!.appendingPathComponent(fileName)
+        if let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileName =  UUID().uuidString + fileExtension
+            let fileURL = filePath.appendingPathComponent(fileName)
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 do {
                     try imageData.write(to: fileURL, options: .atomic)

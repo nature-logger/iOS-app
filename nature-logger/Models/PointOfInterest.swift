@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 class PointOfInterest: Codable {
     let created: Date
@@ -28,17 +29,17 @@ class PointOfInterest: Codable {
         }
     }
     private(set) var description: String?
-    private(set) var id: String?
+    private(set) var fileName: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?, uuid: String?) {
+    init(title: String, description: String?, fileName: String?) {
         self.created = Date()
         self.title = title
         self.description = description
-        self.id = uuid
+        self.fileName = fileName
     }
-    	
+    
     public func setTitle(title: String){
         self.title = title
     }
@@ -51,12 +52,16 @@ class PointOfInterest: Codable {
         self.description = description
     }
     
-    func filePath() -> URL? {
-        if let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first, id != nil {
-            let imageURL = URL(fileURLWithPath: paths).appendingPathComponent(id!)
-            return imageURL
-        } else {
-            return nil
+    func loadImage() -> UIImage? {
+        if let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first, fileName != nil {
+            let fileURL = filePath.appendingPathComponent(fileName!)
+            do {
+                let imageData = try Data(contentsOf: fileURL)
+                return UIImage(data: imageData)
+            } catch {
+                print("Error loading image : \(error)")
+            }
         }
+        return nil
     }
 }

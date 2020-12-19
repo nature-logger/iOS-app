@@ -54,7 +54,7 @@ class LogEntriesTableViewController: UITableViewController {
         
         let poi = logEntries!.pois[indexPath.row]
         
-        if poi.id != nil, let image = loadImage(id: poi.id!) {
+        if let image = poi.loadImage() {
             cell.logEntryImage.image = image
         }
         
@@ -63,16 +63,5 @@ class LogEntriesTableViewController: UITableViewController {
         cell.logEntryDescription.text = poi.description
         
         return cell
-    }
-    
-    func loadImage(id: String) -> UIImage? {
-        let fileURL = documentsUrl.appendingPathComponent(id)
-        do {
-            let imageData = try Data(contentsOf: fileURL)
-            return UIImage(data: imageData)
-        } catch {
-            print("Error loading image : \(error)")
-            return nil
-        }
     }
 }
