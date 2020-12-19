@@ -54,7 +54,7 @@ class LogEntriesTableViewController: UITableViewController {
         
         let poi = logEntries!.pois[indexPath.row]
         
-        if poi.imagePath != nil, let image = loadImage(id: poi.imagePath!) {
+        if poi.id != nil, let image = loadImage(id: poi.id!.uuidString) {
             cell.logEntryImage.image = image
         }
         

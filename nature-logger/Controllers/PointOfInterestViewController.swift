@@ -67,7 +67,7 @@ class PointOfInterestViewController: UIViewController {
         self.poiImage?.saveImage() 
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
         let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
-        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, imagePath: self.poiImage?.id)
+        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, uuid: self.poiImage?.id)
         logEntriesTableViewController.poi = poi
         show(logEntriesTableViewController, sender: self)
     }

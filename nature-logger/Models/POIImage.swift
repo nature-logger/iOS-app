@@ -11,7 +11,7 @@ import UIKit
 
 class POIImage {
     private var image: UIImage
-    let id = "poiimage"
+    let id = UUID()
     
     private var documentsUrl: URL? {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -24,7 +24,7 @@ class POIImage {
     
     func saveImage() {
         if (documentsUrl != nil){
-            let fileName = id
+            let fileName = id.uuidString
             let fileURL = documentsUrl!.appendingPathComponent(fileName)
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 try? imageData.write(to: fileURL, options: .atomic)
