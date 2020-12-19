@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17156"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,6 +27,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z6t-PW-ZuX">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="aeb-mt-0uY"/>
                                                 <constraint firstAttribute="width" secondItem="Z6t-PW-ZuX" secondAttribute="height" multiplier="3:4" id="fkD-hJ-Qfb"/>
                                             </constraints>
                                         </imageView>

@@ -22,23 +22,15 @@ class LogEntriesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         logEntries = LogEntries(poi)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         guard logEntries != nil
         else {
             return 0
@@ -54,12 +46,8 @@ class LogEntriesTableViewController: UITableViewController {
         
         let poi = logEntries!.pois[indexPath.row]
         
-        if let image = poi.loadImage() {
-            cell.logEntryImage.image = image
-        }
-        
+        cell.logEntryImage.image = poi.loadImage()
         cell.logEntryTitle.text = poi.title
-        
         cell.logEntryDescription.text = poi.description
         
         return cell
