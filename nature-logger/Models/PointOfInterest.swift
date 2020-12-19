@@ -28,11 +28,11 @@ class PointOfInterest: Codable {
         }
     }
     private(set) var description: String?
-    private(set) var id: UUID?
+    private(set) var id: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?, uuid: UUID?) {
+    init(title: String, description: String?, uuid: String?) {
         self.created = Date()
         self.title = title
         self.description = description
@@ -53,7 +53,7 @@ class PointOfInterest: Codable {
     
     func filePath() -> URL? {
         if let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first, id != nil {
-            let imageURL = URL(fileURLWithPath: paths).appendingPathComponent(id!.uuidString)
+            let imageURL = URL(fileURLWithPath: paths).appendingPathComponent(id!)
             return imageURL
         } else {
             return nil
