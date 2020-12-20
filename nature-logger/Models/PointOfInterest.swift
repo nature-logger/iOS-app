@@ -14,27 +14,15 @@ class PointOfInterest: Codable {
     let created: Date
     private var longitude: Double?
     private var latitude: Double?
-    var location: CLLocationCoordinate2D? {
-        get {
-            if let longitude = self.longitude, let latitude = self.latitude {
-                return CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
-            }
-            return nil
-        }
-        set {
-            if let location = newValue {
-                longitude = location.longitude
-                latitude = location.latitude
-            }
-        }
-    }
     private(set) var description: String?
     private(set) var imageFileName: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?, imageFileName: String?) {
+    init(title: String, description: String?, imageFileName: String?, longitude: Double?, latitude: Double?) {
         self.created = Date()
+        self.longitude = longitude
+        self.latitude = latitude
         self.title = title
         self.description = description
         self.imageFileName = imageFileName

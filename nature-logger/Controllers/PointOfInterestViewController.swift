@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PointOfInterestViewController: UIViewController {
     
@@ -33,6 +34,10 @@ class PointOfInterestViewController: UIViewController {
         }
     }
     
+    private var geoCoder: CLGeocoder!
+    private var locationManager: CLLocationManager!
+    private var location: CLLocation!
+    
     @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var descriptionText: UITextView!
@@ -47,6 +52,11 @@ class PointOfInterestViewController: UIViewController {
         descriptionText.clipsToBounds = true
         titleText.layer.cornerRadius = 10
         titleText.clipsToBounds = true
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -64,10 +74,11 @@ class PointOfInterestViewController: UIViewController {
     }
     
     @IBAction func submitEntry(_ sender: Any) {
+        locationManager.requestLocation()
         let fileName = self.poiImage?.saveImage()
         let storyboard = UIStoryboard(name: "LogEntries", bundle: nil)
         let logEntriesTableViewController = storyboard.instantiateViewController(identifier: "LogEntriesTableViewController") as! LogEntriesTableViewController
-        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, imageFileName: fileName)
+        let poi = PointOfInterest(title: titleText.text ?? "Untitled", description: descriptionText.text, imageFileName: fileName, longitude: locationManager.location?.coordinate.longitude, latitude: locationManager.location?.coordinate.latitude)
         logEntriesTableViewController.poi = poi
         show(logEntriesTableViewController, sender: self)
     }
@@ -107,5 +118,14 @@ class PointOfInterestViewController: UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+extension PointOfInterestViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let _: CLLocationCoordinate2D = manager.location!.coordinate
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
     }
 }
