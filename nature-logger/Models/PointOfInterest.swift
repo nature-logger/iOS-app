@@ -14,18 +14,31 @@ class PointOfInterest: Codable {
     let created: Date
     private var longitude: Double?
     private var latitude: Double?
+    var location: CLLocation?
+    {
+        get {
+            if latitude != nil && longitude != nil {
+                return CLLocation(latitude: latitude!, longitude: longitude!)
+            } else {
+                return nil
+            }
+        }
+        set(location) {
+            longitude = location?.coordinate.longitude
+            latitude = location?.coordinate.latitude
+        }
+    }
     private(set) var description: String?
     private(set) var imageFileName: String?
     private(set) var owner: String? //For future online features maybe.
     private(set) var title: String
     
-    init(title: String, description: String?, imageFileName: String?, longitude: Double?, latitude: Double?) {
+    init(title: String, description: String?, imageFileName: String?, location: CLLocation?) {
         self.created = Date()
-        self.longitude = longitude
-        self.latitude = latitude
         self.title = title
         self.description = description
         self.imageFileName = imageFileName
+        self.location = location
     }
     
     public func setTitle(title: String){

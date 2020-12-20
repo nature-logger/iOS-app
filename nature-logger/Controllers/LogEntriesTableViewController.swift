@@ -48,4 +48,14 @@ class LogEntriesTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showMap", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? EntryMapViewController, poi != nil {
+            viewController.location = poi!.location
+        }
+    }
 }

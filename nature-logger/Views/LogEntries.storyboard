@@ -71,13 +71,13 @@
                                     <outlet property="logEntryDescription" destination="CBh-J6-Zao" id="GdI-zn-7gG"/>
                                     <outlet property="logEntryImage" destination="Z6t-PW-ZuX" id="Ffe-bZ-Ev9"/>
                                     <outlet property="logEntryTitle" destination="BXM-Ob-MBd" id="2BQ-xG-HM1"/>
-                                    <segue destination="99q-B2-Bsw" kind="popoverPresentation" popoverAnchorView="3Px-1K-Ti3" id="I93-GS-OAx">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
+                    <connections>
+                        <segue destination="99q-B2-Bsw" kind="show" identifier="showMap" id="JfH-ln-vhv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0A-L0-Nzl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,6 +104,7 @@
                             <constraint firstItem="Qkd-t3-ZCQ" firstAttribute="leading" secondItem="DG9-yG-4xw" secondAttribute="leading" constant="20" id="wBF-uY-0fq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5uW-Bi-tVk"/>
                     <connections>
                         <outlet property="map" destination="Qkd-t3-ZCQ" id="FsS-fx-W3w"/>
                     </connections>
