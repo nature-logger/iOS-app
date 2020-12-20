@@ -46,13 +46,9 @@ class PointOfInterestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        submitButton.layer.cornerRadius = 10
-        submitButton.clipsToBounds = true
-        descriptionText.layer.cornerRadius = 10
-        descriptionText.clipsToBounds = true
-        titleText.layer.cornerRadius = 10
-        titleText.clipsToBounds = true
+        setButtonAndTextFieldLayout()
         
+        geoCoder = CLGeocoder()
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -83,7 +79,8 @@ class PointOfInterestViewController: UIViewController {
         show(logEntriesTableViewController, sender: self)
     }
     
-    func setInsentAndScroll(notification: NSNotification, keyboardShown: Bool) {
+    // Sets the keyboard for the scrollview with the keyboard height as the contentInset
+    func setInsetAndScroll(notification: NSNotification, keyboardShown: Bool) {
         let isKeyboardInUse = !keyboardIsOpen && keyboardShown || keyboardIsOpen && !keyboardShown
         
         guard let userInfo = notification.userInfo, isKeyboardInUse, var keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect
@@ -103,17 +100,34 @@ class PointOfInterestViewController: UIViewController {
         self.scrollView.setContentOffset(contentOffset, animated: false)
     }
     
-    func registerNotifications() {
+    // borrowed from exercise 11 about CoreLocation
+    func showError(_ error: Error) {
+        print(error.localizedDescription)
+        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func registerNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    private func setButtonAndTextFieldLayout() {
+        submitButton.layer.cornerRadius = 10
+        submitButton.clipsToBounds = true
+        descriptionText.layer.cornerRadius = 10
+        descriptionText.clipsToBounds = true
+        titleText.layer.cornerRadius = 10
+        titleText.clipsToBounds = true
+    }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
-        setInsentAndScroll(notification: notification, keyboardShown: true)
+        setInsetAndScroll(notification: notification, keyboardShown: true)
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        setInsentAndScroll(notification: notification, keyboardShown: false)
+        setInsetAndScroll(notification: notification, keyboardShown: false)
     }
     
     @objc func dismissKeyboard() {
@@ -123,9 +137,21 @@ class PointOfInterestViewController: UIViewController {
 extension PointOfInterestViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let _: CLLocationCoordinate2D = manager.location!.coordinate
+        if locations.first != nil {
+            location = locations.first
+            self.geoCoder.reverseGeocodeLocation(manager.location!, completionHandler: { placemarks, error in
+                if let p = placemarks?.first {
+                    print(p.locality!)
+                    print(p.administrativeArea!)
+                    print(p.country!)
+                } else if let e = error {
+                    self.showError(e)
+                }
+            })
+        }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        self.showError(error)
     }
 }
